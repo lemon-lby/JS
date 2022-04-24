@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>不能添加空的文本</p>
+        <div class="input">
+            <input type="text" id="input">
+            <button>添加</button>
+        </div>
+        <ul class="list">
+            <li>项目1</li>
+            <li>项目2</li>
+        </ul>
+    </div>
+
+
+    <script>
+        var text = document.getElementById("input");
+        var btnAdd = document.querySelector(".input button");
+        var list = document.querySelector("ul");
+        var p = document.querySelector("p");
+        btnAdd.onclick = function () {
+            if (!text.value.trim()) {
+                p.className = "error";
+            } else {
+                p.className = "";
+                var newText = document.createElement("li");
+                newText.innerText = text.value;
+                list.appendChild(newText);
+                text.value = "";
+            }
+
+            //    if(text.value===""){
+            //        alert("不能为空");
+            //    }else{
+            //     list.appendChild(newText);
+            //     text.value = "";
+            //    }
+
+
+        }
+    </script>
+</body>
+
+</html>

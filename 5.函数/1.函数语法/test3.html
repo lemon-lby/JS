@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 输出一个数是不是奇数
+        function isOdd(n) {
+            if (n % 2 === 0) {
+                console.log("不是奇数");
+            } else {
+                console.log(n + "是奇数");
+            }
+        }
+        // isOdd(3);
+        // isOdd();
+        var nums = [1, 2, 3, 4, 5, 6];
+        for (var i = 0; i < nums.length; i++) {
+            isOdd(nums[i]);
+        }
+
+
+
+
+        //输出两个数相加的结果
+        // function sum(a,b){
+        //     console.log(`${a}+${b}=${a+b}`);
+        // }
+        // sum(1,2);
+
+        // 输出一个数是不是奇数
+
+
+
+
+        // 对一个数组求和
+        // function sumOfArray(arr) {
+        //     var sum = 0;
+        //     for (var i = 0; i < arr.length; i++) {
+        //         sum += arr[i];
+        //     }
+        //     console.log("和为:" + sum);
+        // }
+        // sumOfArray([1,2,3,4,5]);
+
+
+
+
+
+        // 删除数据末尾的指定数量的数据
+        function deleteArray(arr,number){
+            arr.splice(-number,number);
+        }
+        var nums = [1,2,3,4,5];
+        deleteArray(nums,3);
+        console.log(nums);
+    </script>
+</body>
+
+</html>

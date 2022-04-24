@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var money = prompt("请输入理财金额");
+        var year = prompt("请输入理财年限");
+        var rate;
+        if (money < 500000) {
+            rate = 0.04;
+            console.log(`收益为${money*year*rate}`)
+        }
+        else if(money>=500000){
+            rate = 0.045;
+            if(money<=2000000){
+                console.log(`收益为${money*year*rate}`)
+            }
+            else{
+                console.log(`收益为${money*year*rate + money*year*rate*0.1}`)
+            }
+        }
+        else{
+            console.log("输入有误");
+        }
+    </script>
+</body>
+
+</html>

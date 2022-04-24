@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list1">
+       <li><a href="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam, consectetur?</a></li>
+       <li><a href="">Perferendis libero eveniet quam molestias sed saepe ullam earum excepturi.</a></li>
+       <li><a href="">Quibusdam sapiente quis optio aut. Nam blanditiis sint voluptatibus neque?</a></li>
+       <li><a href="">Expedita molestias aliquam nam voluptas commodi eius quibusdam atque reprehenderit!</a></li>
+       <li><a href="">Natus voluptate quasi aliquam vitae beatae earum molestiae accusamus dolorem.</a></li>
+       <li><a href="">Eveniet iste harum ratione officia pariatur, eligendi odit corrupti necessitatibus?</a></li>
+       <li><a href="">Minima velit asperiores saepe, fuga cupiditate labore est ipsa necessitatibus.</a></li>
+       <li><a href="">Animi nihil natus, velit error officia veritatis alias quod inventore.</a></li>
+       <li><a href="">Pariatur asperiores itaque molestias voluptas ullam aspernatur ratione tempore molestiae.</a></li>
+       <li><a href="">Aut delectus quibusdam sequi nam? Mollitia quibusdam laboriosam modi cum.</a></li>
+    </ul>
+    <ul id="list2">
+        <li><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, delectus!</a></li>
+        <li><a href="">Eius, tenetur? Eaque commodi delectus atque assumenda corrupti. Magni, itaque?</a></li>
+        <li><a href="">Deleniti consectetur a illo deserunt eum veritatis quas accusamus consequatur!</a></li>
+        <li><a href="">Eum, eligendi natus? Dolorum cumque eveniet cum, totam consequuntur magni.</a></li>
+        <li><a href="">Non aspernatur sit iste accusamus. Quibusdam voluptatibus quaerat cum ullam!</a></li>
+        <li><a href="">Placeat itaque minus quis ut blanditiis numquam modi magnam voluptas.</a></li>
+        <li><a href="">Minus in, asperiores dolorum ea magni enim nobis libero consectetur!</a></li>
+        <li><a href="">Porro libero at non cupiditate nesciunt tempora laboriosam aliquid debitis.</a></li>
+        <li><a href="">Dolorum, quis. Perspiciatis aliquid eius voluptatum provident consequatur minima amet!</a></li>
+        <li><a href="">Modi perferendis quisquam praesentium suscipit voluptatum! Voluptate illum quae aut!</a></li>
+    </ul>
+    <script>
+        // 准备两个数组，分别存放list1和list2中所有超链接的内容
+        // var arr1 = document.getElementById("list1").querySelectorAll("a");
+        // console.log(arr1);
+        // var arr2 = document.getElementById("list2").querySelectorAll("a");
+        // console.log(arr2);
+
+        // 得到某个元素下面的所有a元素的数组
+        function getLinkContens(dom){
+            // var newArr= [];
+            // var arr = dom.querySelectorAll("a");
+            // for(var i = 0;i<arr.length;i++){
+            //     var a = arr[i];
+            //     newArr.push(a.firstChild.nodeValue);
+            // }
+            // return newArr;
+
+            return Array.from(dom.getElementsByTagName("a")).map(function(a){
+                return a.firstChild.nodeValue;
+            })
+        }
+        console.log(getLinkContens(document.getElementById("list1")));
+        console.log(getLinkContens(document.getElementById("list2")));
+    </script>
+</body>
+</html>

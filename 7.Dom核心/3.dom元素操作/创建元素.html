@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur beatae consectetur autem nesciunt
+            aliquid.</li>
+        <li>Blanditiis tempore aliquam, voluptates at nesciunt voluptatibus esse, id ut doloremque maiores autem
+            provident?</li>
+        <li>Aspernatur velit, repellendus, vero voluptate quod molestiae unde maiores fugiat itaque autem, officia vel!
+        </li>
+        <li>Est odio et, rerum ullam consequatur reiciendis vitae nulla soluta, similique distinctio illo sit.</li>
+        <li>Repudiandae voluptates laudantium, error modi, impedit laboriosam, provident tenetur esse adipisci vitae sit
+            animi!</li>
+        <li>Quae mollitia fugit accusamus cumque ipsam illo labore aliquid officia? Doloremque quae sint repellendus.
+        </li>
+        <li>Iste repellendus beatae veniam rem expedita, autem omnis. Voluptas, et. Eligendi magnam fugiat voluptas?
+        </li>
+        <li>Iure, eum ipsa dolorem ad quia, incidunt officiis quod vitae commodi sed dicta ipsam!</li>
+        <li>Repellat cumque dolor non deserunt, distinctio itaque voluptatibus animi magni explicabo ullam culpa
+            dolorem.</li>
+        <li>Culpa ratione, praesentium ex, veritatis fugiat totam mollitia, necessitatibus quos at sit minus cupiditate.
+        </li>
+    </ul>
+
+
+
+    <script>
+        var ul = document.getElementById("ul1");
+        var frag = document.createDocumentFragment();
+        for (var i = 1; i <= 100; i++) {
+            var li = document.createElement("li");
+            li.innerText = "选项" + i;
+            frag.appendChild(li);
+        }
+        ul.appendChild(frag);
+    </script>
+</body>
+
+</html>

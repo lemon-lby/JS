@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            float: left;
+        }
+        .small{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .big{
+            width: 540px;
+            height: 540px;
+            border: 1px solid black;
+            margin-left: 10px;
+            display: none;
+        }
+        .small .move{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: rgb(255, 255, 0,0.5);
+            box-sizing: border-box;
+            cursor: move;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="small">
+        <div class="move"></div>
+    </div>
+    <div class="big"></div>
+    <script src="./src/index.js"></script>
+</body>
+</html>

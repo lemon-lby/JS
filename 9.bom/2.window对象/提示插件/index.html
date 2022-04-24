@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>确认对话框</button>
+    <SCript src="../../../plugin/confirm.js"></SCript>
+    <script>
+        var btn = document.querySelector("button");
+        btn.onclick = function () {
+            //打开一个确认对话框
+            myPlugin.openConfirm({
+                title: "删除的提示",
+                content: "真的要删除吗",
+                onConfirm:function(){
+                    console.log("点击了确定");
+                },
+                onCancel:function(){
+                    console.log("点击了取消");
+                }
+
+            });
+        }
+    </script>
+</body> 
+
+</html>

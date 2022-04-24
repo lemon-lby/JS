@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background-color: red;
+            cursor: move;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle"></div>
+
+
+<!-- 方法一 -->
+    <script>
+
+        var div = document.querySelector("div");
+        div.onmousedown = function (e) {
+            if (e.button !== 0) {
+                return;
+            }
+            var pageX = e.pageX;
+            var pageY = e.pageY;
+            var style = getComputedStyle(div);
+            var moveLeft = parseFloat(style.left);
+            var moveTop = parseFloat(style.top);
+
+
+            window.onmousemove = function (e) {
+                var disX = e.pageX - pageX;
+                var disY = e.pageY - pageY;
+                div.style.left = moveLeft + disX + "px";
+                div.style.top = moveTop + disY + "px";
+            }
+            window.onmouseup = window.onmouseleave = function (e) {
+                if (e.button === 0) {
+                    window.onmousemove = null;
+                }
+            }
+        }
+    </script>
+
+<!-- 方法二 -->
+    <!-- <script>
+        var div = document.querySelector("div");
+        var style = getComputedStyle(div);
+        var moveLeft = parseFloat(style.left);
+        var moveTop = parseFloat(style.top);
+
+        div.onmousedown = function (e) {
+            if (e.button !== 0) {
+                return;
+            }
+            window.onmousemove = function (e) {
+                moveLeft += e.movementX;
+                moveTop += e.movementY;
+                div.style.left = moveLeft + "px";
+                div.style.top = moveTop + "px";
+            }
+            window.onmouseup = window.onmouseleave = function (e) {
+                if (e.button === 0) {
+                    window.onmousemove = null;
+                }
+            }
+        }
+    </script> -->
+</body>
+
+</html>

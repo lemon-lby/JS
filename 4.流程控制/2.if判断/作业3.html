@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var gender = prompt("请输入性别");
+        var height = prompt("请输入身高");
+        var weight = prompt("请输入体重");
+        var standard;
+        if (gender == "男") {
+            standard = (height - 80) * 0.7;
+            if (weight >= 0.9 * standard && weight <= 1.1 * standard) {
+                console.log("你的体重正常,请继续保持");
+            } else if (weight < 0.9 * standard) {
+                console.log("你的身体偏瘦,请加强营养");
+            } else {
+                console.log("你的身体偏胖,请加强锻炼");
+            }
+        } else if (gender == "女") {
+            standard = (height - 70) * 0.6;
+            if (weight >= 0.9 * standard && weight <= 1.1 * standard) {
+                console.log("你的体重正常,请继续保持");
+            } else if (weight < 0.9 * standard) {
+                console.log("你的身体偏瘦,请加强营养");
+            } else {
+                console.log("你的身体偏胖,请加强锻炼");
+            }
+        } else {
+            console.log("输入有误");
+        }
+    </script>
+</body>
+
+</html>

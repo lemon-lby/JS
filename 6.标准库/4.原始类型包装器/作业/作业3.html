@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = prompt("随机字符串长度");
+        var s = "";
+        for (var i = 0; i < num; i++) {
+            if (Math.random() < 0.3) {
+                s += String.fromCharCode(getRandom(97, 122));
+            }else if(Math.random() > 0.3&&Math.random() < 0.6){
+                s += String.fromCharCode(getRandom(65, 90));
+            }else{
+                s += String.fromCharCode(getRandom(48, 57));
+            }
+
+        }
+        function getRandom(min, max) {
+            return Math.floor(parseInt(Math.random() * (max - min) + min));
+        };
+        console.log(s);
+    </script>
+</body>
+
+</html>

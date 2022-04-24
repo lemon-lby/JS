@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptatum!</li>
+            <li>Sunt dolor nisi exercitationem molestias culpa. Dolores repudiandae fugit accusantium?</li>
+            <li>Dolore velit repellendus officia dolorem maiores illum nemo voluptas distinctio.</li>
+            <li>Recusandae eius sapiente aperiam, doloremque laborum numquam reiciendis minus iste!</li>
+            <li>Harum, labore corporis tenetur sed provident quo culpa ullam repellendus.</li>
+            <li>Qui temporibus amet quo ratione odit sequi sint fugit optio!</li>
+            <li>Et eveniet atque, distinctio mollitia officia aperiam aut adipisci molestias.</li>
+            <li>Consequatur, quibusdam ad! Sapiente, a? Dolores minima nam soluta delectus.</li>
+            <li>Similique ab, consequatur inventore sit earum atque molestiae quaerat maiores?</li>
+            <li>Architecto deserunt commodi reprehenderit repellat debitis doloribus, facilis enim odit.</li>
+        </ul>
+    </div>
+    <div class="container2">
+        <span>fasf</span>
+        <h1>fasf</h1>
+        <h2>fsf</h2>
+    </div>
+    <div class="container3">
+        <i>fa</i>
+        <p>fsdfg</p>
+        <div class="c3">
+            <p>asfag</p>
+        </div>
+    </div>
+
+
+    <script>
+        //一个函数，传入一个dom对象，返回该对象的第一个div容器
+        function div(dom) {
+            // var parent = dom.parentElement;
+            // while (parent != null && parent.nodeName !== "DIV") {
+            //     parent = parent.parentElement;
+            // }
+            // return parent;
+
+
+
+            // !!!!!!!!!!!!!
+            for (var parent = dom.parentElement; parent != null && parent.nodeName !== "DIV"; parent = parent
+                .parentElement) {}
+            return parent;
+        };
+        console.log(div(document.querySelector(".c3")));
+    </script>
+</body>
+
+</html>

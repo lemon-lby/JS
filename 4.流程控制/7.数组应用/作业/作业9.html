@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4];
+        var record = {};
+        for (i = 0; i < arr.length; i++) {
+            var n = arr[i];
+            if (record[n]) {
+                record[n]++;
+            } else {
+                record[n] = 1;
+            }
+        }
+        var result;
+        for (var prop in record) {
+            if (!result || record[prop] > result.frequency) {
+                result = {
+                    number: prop,
+                    frequency: record[prop]
+                };
+
+            }
+        }
+        console.log(result);
+    </script>
+</body>
+
+</html>

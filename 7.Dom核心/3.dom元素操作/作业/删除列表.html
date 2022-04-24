@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        .container li {
+            margin: 20px 0;
+        }
+
+        .container button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>
+            <button>清空</button>
+        </p>
+        <ul class="list">
+            <li>项目1<button>删除</button></li>
+            <li>项目2<button>删除</button></li>
+            <li>项目3<button>删除</button></li>
+            <li>项目4<button>删除</button></li>
+            <li>项目5<button>删除</button></li>
+            <li>项目6<button>删除</button></li>
+            <li>项目7<button>删除</button></li>
+            <li>项目8<button>删除</button></li>
+            <li>项目9<button>删除</button></li>
+            <li>项目10<button>删除</button></li>
+        </ul>
+    </div>
+    <script>
+        var div = document.querySelector(".container");
+        var list = document.querySelector(".list");
+        var delAll = document.querySelector(".container p button");
+        delAll.onclick = function () {
+            list.remove();
+        }
+        var btn = document.querySelectorAll(".list li button");
+        // 最终写法
+        Array.from(btn).forEach(function (b) {
+            b.onclick = function () {
+                b.parentElement.remove();
+            }
+        })
+
+        // for (var i = 0; i < 10; i++) {
+        // var b = btn[i]; //得到当前按钮
+        // regEvent(b);//固定变量值
+        // btn[i].onclick = function(){
+        //     this.parentElement.remove();
+        // }
+
+
+
+        // 
+        //     (function(b) {
+        //         b.onclick = function () {
+        //             b.parentElement.remove();
+        //         }
+        //     })(b);
+        // }
+
+
+
+
+        // function regEvent(btn) {
+        //     btn.onclick = function () {
+        //         this.parentElement.remove();
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

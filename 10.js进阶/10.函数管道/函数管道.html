@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="../../plugin/helpers.js"></script>
+    <script>
+        //函数管道：将多个单参函数组合起来形成一个新的函数，这些函数中，前一个函数的输出，是后一个函数的输入
+
+
+        //将字符串中每一个首字母大写
+        var str = "  MY   fiRST   name  "
+
+        function everyFirstLetterUp(str) {
+            return str.replace(/\b(\w)(\w*)\b/g, function ($, $1, $2) {
+                return $1.toUpperCase() + $2;
+            })
+        }
+        // 将字符串除首字母之外都小写
+        function otherLetterLower(str) {
+            return str.replace(/\b(\w)(\w*)\b/g, function ($, $1, $2) {
+                return $1 + $2.toLowerCase();
+            })
+        }
+        //去掉所有的空白字符
+        function removeEmpty(str) {
+            return str.replace(/\s+/g, "");
+        }
+        //第一个字符小写
+        function firstLetterLower(str) {
+            return str.replace(/\w/, function ($) {
+                return $.toLowerCase();
+            });
+        }
+        var smallCamel = myPlugin.pipe(everyFirstLetterUp, firstLetterLower, otherLetterLower, removeEmpty);
+        //将字符串变为小驼峰命名法
+        console.log(smallCamel(str));
+    </script>
+</body>
+
+</html>

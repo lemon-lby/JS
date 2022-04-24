@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var perm = {
+            // 保存了所有可能的权限
+            read : 0b0001, // 读
+            write : 0b0010, // 修改
+            create : 0b0100 // 创建
+        }
+        // p可读可写可创建
+        var p = perm.read | perm.write | perm.create;
+
+
+
+        // 去掉可读权限
+
+        // 011 ^ 001 = 010
+        p = p | perm.read ^ perm.read;
+
+
+
+
+
+
+
+
+
+        // 判断权限:p是否可读
+        // 011 & 001 = 001
+        p & perm.read === perm.read ? console.log("可读") : console.log("不可读");
+
+    </script>
+</body>
+</html>

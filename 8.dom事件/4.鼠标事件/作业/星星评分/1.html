@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 464px;
+
+        }
+
+        img {
+            margin: -3px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img src="./2.png" alt="">
+        <img src="./2.png" alt="">
+        <img src="./2.png" alt="">
+        <img src="./2.png" alt="">
+        <img src="./2.png" alt="">
+    </div>
+    <div class="word">
+
+    </div>
+    <script>
+        var word = document.querySelector("div.word");
+        var div = document.querySelector("div.img");
+        var str = 0;
+        var words = ["满意", "一般满意", "还不错", "很满意", "非常满意"];
+        div.onmouseover = function (e) {  
+            if (e.target.tagName === "IMG") {
+                e.target.src = "./1.png";
+            }
+            var pre = e.target.previousElementSibling;
+            while (pre) {
+                pre.src = "./1.png";
+                pre = pre.previousElementSibling;
+            }
+            var next = e.target.nextElementSibling;
+            while (next) {
+                next.src = "./2.png";
+                next = next.nextElementSibling;
+            }
+
+            var index = Array.from(div.children).indexOf(e.target);
+            word.innerHTML = words[index];
+        }
+
+        div.onclick = function (e) {
+            if (e.target.tagName === "IMG") {
+                var index = Array.from(div.children).indexOf(e.target);
+                str = index + 1;
+            }
+        }
+
+
+        div.onmouseleave = function () {
+            if (str === 0) {
+                for (var i = 0; i < div.children.length; i++) {
+                    div.children[i].src = "./2.png";
+                }
+                word.innerHTML = "";
+            } else {
+                var index = str - 1;
+                word.innerHTML = words[index];
+                for (var i = 0; i < div.children.length; i++) {
+                    if (i <= index) {
+                        div.children[i].src = "./1.png";
+                    } else {
+                        div.children[i].src = "./2.png";
+                    }
+
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

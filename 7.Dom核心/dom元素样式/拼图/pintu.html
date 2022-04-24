@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .container {
+            width: 417px;
+            height: 416px;
+        }
+
+        .container div {
+            width: 137px;
+            height: 137px;
+            border: 1px solid black;
+            cursor: pointer;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container clearfix">
+        <div class="img"><img src="./素材/1.png" alt=""></div>
+        <div class="img"><img src="./素材/2.png" alt=""></div>
+        <div class="img"><img src="./素材/3.png" alt=""></div>
+        <div class="img"><img src="./素材/4.png" alt=""></div>
+        <div class="img"><img src="./素材/5.png" alt=""></div>
+        <div class="img"><img src="./素材/6.png" alt=""></div>
+        <div class="img"><img src="./素材/7.png" alt=""></div>
+        <div class="img"><img src="./素材/8.png" alt=""></div>
+        <div class=""></div>
+    </div>
+
+
+
+
+    <script>
+        // var div = document.querySelector("div");
+        // var imgs = [];
+        // for(var i =1;i<=8;i++){
+        //     imgs.push(createImg(`./素材/${i}.png`));
+        // }
+        // function createImg(src){
+        //     var img = document.createElement("img");
+        //     img.src = src;
+        //     return img;
+        // }
+        // imgs.forEach(function(img){
+        //     div.appendChild(img);
+        // })
+        var imgs = [];
+        for (var i = 1; i <= 8; i++) {
+            imgs.push(createImg(`./素材/${i}.png`));
+            imgs[i].onclick = function(){
+                imgs[i].remove;
+            }
+        }
+
+        function createImg(src) {
+            var img = document.createElement("img");
+            img.src = src;
+            return img;
+        }
+        
+    </script>
+</body>
+
+</html>

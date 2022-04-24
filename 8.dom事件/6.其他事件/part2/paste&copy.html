@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+        var txt = document.querySelector("textarea");
+        txt.onpaste = function (e) {
+            // e.preventDefault();
+            var clipboardData = e.clipboardData || window.clipboardData;
+            var data = console.log(clipboardData.getData("text/plain"));
+            data = "来自于粘贴:" + data;
+            clipboardData.setData("text/plain",data);
+
+            clipboardData.clearData("text/plain");
+        }
+        txt.oncopy = function (e) {
+            // e.preventDefault();
+        }
+    </script>
+</body>
+
+</html>

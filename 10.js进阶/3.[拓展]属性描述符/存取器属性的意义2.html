@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        var style = getComputedStyle(div);
+        var config = {
+            _x: 0,
+            _y: 0,
+            yDis: 10,
+            xDis: 10,
+            duration: 16,
+            height: 100,
+            width: 100
+        }
+
+        Object.defineProperty(config, "x", {
+            get: function () {
+                return this._x;
+            },
+            set: function (val) {
+                if (val < 0) {
+                    val = 0;
+                } else if (val > document.documentElement.clientWidth - this.width) {
+                    val = document.documentElement.clientWidth - this.width;
+                }
+                this._x = val;
+                div.style.left = val + "px";
+            }
+        });
+        Object.defineProperty(config, "y", {
+            configurable:true,
+            get: function () {
+                return this._y;
+            },
+            set: function (val) {
+                if (val < 0) {
+                    val = 0;
+                } else if (val > document.documentElement.clientHeight - this.height) {
+                    val = document.documentElement.clientHeight - this.height;
+                }
+                this._y = val;
+                div.style.top = val + "px";
+            }
+        }); 
+        setInterval(function () {
+            config.x += config.xDis;
+            config.y += config.yDis;
+            //判断边界
+            if (config.y === document.documentElement.clientHeight - config.height || config.y === 0) {
+                config.yDis = -config.yDis;
+            }
+            if (config.x === document.documentElement.clientWidth - config.width || config.x === 0) {
+                config.xDis = -config.xDis;
+            }
+        }, config.duration);
+    </script>
+</body>
+
+</html>

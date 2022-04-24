@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav {
+            background-color: black;
+        }
+
+        span {
+            color: white;
+            cursor: pointer;
+            margin: 0 15px;
+        }
+
+        span.active {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <span>Lorem</span>
+            <span>Illum</span>
+            <span>Velit</span>
+            <span>Vel</span>
+            <span>Dolo</span>
+            <span>Bland</span>
+        </nav>
+    </header>
+
+
+    <script>
+        var spans = document.querySelectorAll("span");
+        Array.from(spans).forEach(function(item){
+            item.onclick = function(){
+                var span = document.querySelector("span.active");
+                if(span){
+                    span.classList.remove("active");    
+                }
+                this.classList.add("active");
+            }
+        })
+       
+    </script>
+</body>
+
+</html>

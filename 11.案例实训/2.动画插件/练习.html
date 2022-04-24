@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .container {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <script src="../../plugin/动画插件练习.js"></script>
+    <script src="../../plugin/helpers.js"></script>
+    <script>
+        var div = document.querySelector(".container");
+        var animate = new myPlugin.Animate({
+            duration: 30,
+            total: 1000,
+            begin: {
+                left: 0,
+                top: 0,
+            },
+            end: {
+                left: 500,
+                top: 500
+            },
+            onstart:function(){
+                console.log("开始");
+            },
+            onmove: function (data) {
+                div.style.left = this.curData.left + "px";
+                div.style.top = this.curData.top + "px";
+            }
+        })
+    </script>
+</body>
+
+</html>

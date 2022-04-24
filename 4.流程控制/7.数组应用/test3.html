@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 将数组的每一项进行字符串拼接
+
+        var arr = [1,2,3,4,5];
+
+        // 输出1,2,3,4,5
+        var str = "";
+        // for(var i = 0;i<arr.length;i++){
+        //     str += arr[i];
+        //     if(i<arr.length-1){
+        //         str += ","
+        //     }
+        // }
+        // console.log(str);
+
+
+
+        // 数组.join(分隔符),该函数返回一个字符串
+        var str = arr.join(",")
+        console.log(str);
+    </script>
+</body>
+</html>

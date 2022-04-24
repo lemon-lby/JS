@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./../../../common/MyFunctions.js"></script>
+    <script>
+        //日历
+        function date() {
+            var date = new Date();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+            var days;
+            var arr = [1, 3, 5, 7, 8, 10, 12];
+            if (month === 2) {
+                if (MyFunctions.isLeap(year)) {
+                    days = 29
+                } else {
+                    days = 28
+
+                }
+            }
+            if (arr.includes(month)) {
+                days = 31
+            } else {
+                days = 30
+            }
+            for (var i = 1; i <= days; i++) {
+                console.log(`${year}-${month}-${i} 星期${getDayOfWeek(year,month,i)}`);
+            }
+        }
+
+        function getDayOfWeek(year, month, day) {
+            var d = new Date(year, month - 1, day);
+            var day = d.getDay();
+            switch (day) {
+                case 0:
+                    return "日";
+                case 1:
+                    return "一";
+                case 2:
+                    return "二";
+                case 3:
+                    return "三";
+                case 4:
+                    return "四";
+                case 5:
+                    return "五";
+                case 6:
+                    return "六";
+            }
+        }
+        console.log(date());
+    </script>
+</body>
+
+</html>

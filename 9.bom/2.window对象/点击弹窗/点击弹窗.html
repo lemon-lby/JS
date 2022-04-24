@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .tip {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: lightblue;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            box-sizing: border-box;
+            display: none;
+        }
+
+        .tip .words {
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+        }
+
+        .tip .btns {
+            height: 50px;
+
+
+        }
+
+        .tip .btns button {
+            margin-top: 14px;
+            margin-left: 70px;
+        }
+
+        .tip .cancle span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button class="jump">点击跳转百度</button>
+    <div class="tip">
+        <div class="words">确定跳转吗</div>
+        <div class="btns">
+            <button class="yes">确定</button>
+            <button class="no">取消</button>
+        </div>
+        <div class="cancle"><span>X</span></div>
+    </div>
+    <script>
+        var btnJump = document.querySelector(".jump");
+        var btnYes = document.querySelector(".tip .btns .yes");
+        var btnNo = document.querySelector(".tip .btns .no");
+        var tip = document.querySelector(".tip");
+        var cancle = document.querySelector(".tip .cancle span");
+        var style = getComputedStyle(tip);
+        btnJump.onclick = function () {
+            tip.style.display = "block";
+        }
+        btnYes.onclick = function () {
+            location.href = "http://www.baidu.com";
+        }
+        btnNo.onclick = function () {
+            tip.style.display = "none";
+        }
+        cancle.onclick = function () {
+            tip.style.display = "none";
+        }
+
+        tip.onmousedown = function (e) {
+            if (e.button !== 0) {
+                return;
+            }
+            
+            var pageX = e.pageX;
+            var pageY = e.pageY;
+            var style = getComputedStyle(tip);
+            var moveLeft = parseFloat(style.left);
+            var moveTop = parseFloat(style.top);
+            window.onmousemove = function (e) {
+                var disX = e.pageX - pageX;
+                var disY = e.pageY - pageY;
+               tip.style.left = moveLeft + disX + "px";
+               tip.style.top = moveTop + disY + "px";
+            }
+            window.onmouseup = window.onmouseleave = function(e){
+                window.onmousemove = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

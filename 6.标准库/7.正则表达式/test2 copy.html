@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var reg = /\d+/g;
+        var s = "1234fassa123asd";
+        //match
+        var result = s.match(reg);
+        //result
+        console.log(result);
+        var result2 = s.search(reg);
+        console.log(result2);
+        var result3 = s.search(reg);
+        console.log(result3);
+
+        //split
+        var a = "sadad,dasfa-f fafaf\tdasda";
+        //按照逗号空格横杠制表符进行分割
+        var result4 = a.split(/[, \-\t]/,3);
+        console.log(a,result4);
+
+
+        //replcae 将空白字符替换为逗号
+        console.log(a);
+        var c =  a.replace(/\s/g,",");
+        console.log(c);
+        //replace 第二个参数可以传函数,例子首字母大写
+        var d = "hello world\tsad\nadad";
+        d = d.replace(/\s*\b[a-z]\s*/g,function(item){
+            return item.toUpperCase().trim();
+        });
+        console.log(d);
+    </script>
+</body>
+
+</html>

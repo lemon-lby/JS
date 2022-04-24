@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 3em;
+        }
+
+        button {
+            font-size: 2em;
+        }
+    </style>
+</head>
+
+<body>
+    <p>倒计时：<span id="span1">3</span></p>
+    <p>
+        点击数：<span id="span2">0</span>
+    </p>
+    <p>
+        <button id="btn1">点击</button>
+        <button id="btn2">重置</button>
+    </p>
+    <script>
+        var num = 0,
+            clock = 3, //倒计时
+            timer, //计时器id
+            isOver = false;
+        span1 = document.getElementById("span1"),
+            span2 = document.getElementById("span2"),
+            btn1 = document.getElementById("btn1"),
+            btn2 = document.getElementById("btn2");
+        btn1.onclick = function () {
+            if (num === 0) {
+                setClock();
+            }
+            if (!isOver) {
+                setNum(num + 1);
+            }
+
+        }
+        btn2.onclick = function () {
+            setNum(0);
+            clock = 3;
+            span1.innerText = clock;
+            isOver = false;
+        }
+
+        function setNum(n) {
+            num = n;
+            span2.innerText = num;
+        }
+        //开启倒计时
+        function setClock() {
+            if (timer) {
+                return;
+            }
+            timer = setInterval(function () {
+                clock--;
+                span1.innerText = clock;
+                if (clock === 0) {
+                    clearInterval(timer);
+                    timer = null;
+                    isOver = true;
+                }
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var g = 1;
+        function A(){
+            var a = 2;
+            console.log(a,g);
+            function B(){
+                var c = 3;
+                console.log(a,g,c);
+            }
+        }
+        // A很复杂 需要B辅助完成 B只会被A使用 所以把B声明到A的内部
+        console.log(g);
+    </script>
+</body>
+</html>

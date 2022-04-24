@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = new Array(1, 2, 3, 4);
+        // 创建一个用户
+        function createUser(name, age, gender) {
+            return {
+                name, //可以简写
+                age,
+                gender: gender,
+                // say: function () {
+                say() {
+                    console.log(`我叫${this.name},今年${this.age}岁了`)
+                }
+            }
+        }
+        var a = createUser("张三", 18, "男");
+        a.say();
+    </script>
+</body>
+
+</html>

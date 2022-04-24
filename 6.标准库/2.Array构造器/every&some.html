@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [59, 60, 70, 80];
+        // 判断是否全都及格
+        console.log(arr.every(function (item, i, a) {
+            return item >= 60;
+        }))
+
+
+        // 判断是否至少一个及格
+        console.log(arr.some(function (item, i, a) {
+            return item >= 60;
+        }))
+    </script>
+</body>
+
+</html>

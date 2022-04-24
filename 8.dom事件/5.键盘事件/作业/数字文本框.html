@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <script>
+        var inp = document.querySelector("input");
+        // var temp = /^-?\d+(\.0+)?$/;
+        // inp.onkeypress = function (e) {
+        //     if(!temp.test(e.key)){
+        //         return false;
+        //     }
+        // }
+        inp.onkeypress = function (e) {
+            var code = e.key[0].charCodeAt(0);
+            if (code < 48 || code > 57) {
+                e.preventDefault();
+            }
+        }
+        
+        inp.onpaste = function (e) {
+            var text = e.clipboardData.getData("text/plain");
+            if (!text || !/\d+/.test(text)) {
+                e.preventDefault();
+            }
+        }
+    </script>
+</body>
+
+</html>

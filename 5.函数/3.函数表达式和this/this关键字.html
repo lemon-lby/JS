@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(this);
+
+        // 函数内使用this  1.直接调用
+        function test(){
+            console.log(this);
+        }
+        test();
+
+
+
+         // 函数内使用this  2.通过一个对象调用
+         function test(){
+            console.log(this);
+        }
+        var b = test;
+        var arr = [b,test];
+        arr[0]();
+
+
+        var obj = {
+            a:function(){
+                console.log(this);
+            },
+            b:{
+                x:1111,
+                func:function(){
+                    console.log(this);
+                }
+            }
+        }
+        obj.a(); // 指向obj
+        obj.b.func();//指向b
+
+    </script>
+</body>
+</html>

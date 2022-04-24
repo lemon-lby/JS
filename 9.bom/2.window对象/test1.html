@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <button>打开新页面</button>
+    <iframe src="" name="myframe" frameborder="0"></iframe>
+    <script>
+        var btn = document.querySelector("button"),w;
+        btn.onclick = function () {
+            w = window.open("test2.html", null, "width=300,height=300");
+
+        }
+    </script>
+</body>
+
+</html>

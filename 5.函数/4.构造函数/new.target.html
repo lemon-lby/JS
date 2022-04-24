@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function User(name, age, gender) {
+            var temp = function () {
+                console.log(`我叫${this.name},性别${this.gender},今年${this.age}岁了`)
+            };
+            if (new.target === User) {
+                this.name = name;
+                this.age = age;
+                this.gender = gender;
+                this.sayhello = temp;
+            } else {
+                return {
+                    name,
+                    age,
+                    gender,
+                    sayhello: temp
+                }
+            }
+        }
+        var a = new User("张三",16,"男");
+        var b = User("李四",14,"男");
+        a.sayhello();
+        b.sayhello();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //计算还有多少天生日
+        function getDaysToBirthday(month, day) {
+            var now = new Date();
+            var thisYear = now.getFullYear();
+            //今年的生日
+            var birthDay = new Date(thisYear, month - 1, day);
+            //生日已过，计算到明年的生日
+            if (birthDay < now) {
+                birthDay.setFullYear(now.getFullYear() + 1);
+            }
+            var timeDec = (birthDay - now) / (24 * 60 * 60 * 1000);
+            return Math.ceil(timeDec);
+        }
+        console.log(getDaysToBirthday(1,20));
+    </script>
+</body>
+
+</html>

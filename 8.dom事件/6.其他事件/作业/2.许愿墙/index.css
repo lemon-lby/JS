@@ -1,0 +1,22 @@
+.container {
+    background-color: lightblue;
+}
+.container .main{
+    height: 760px;
+}
+.container .main .title{
+    height: 60px;
+    text-align: center;
+    color: #008c8c;
+    font-size: 3em;
+    margin: 0;
+    border-bottom: 1px solid #008c8c;
+}
+
+.container .wish button,.container .wish input{
+    width: 100%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    font-size: 2em;
+}

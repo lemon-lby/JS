@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //找到某个字符串中出现最多的字符，打印字符和他出现的次数
+        var char = "acdsdsasfagaha";
+        var arr = Array.from(char);
+        function test(arr) {
+            var recore = {};
+            for (var i = 0; i < arr.length; i++) {
+                var n = arr[i];
+                if (recore[n]) {
+                    recore[n]++;
+                } else {
+                    recore[n] = 1;
+                }
+            }
+            var result;
+            for (var prop in recore) {
+                if (!result || recore[prop] > result.frquency) {
+                    result = {
+                        name: prop,
+                        frquency: recore[prop]
+                    }
+                };
+            }
+            return result;
+        }
+        var result = test(arr);
+        console.log(result);
+    </script>
+</body>
+
+</html>

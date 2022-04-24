@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //var arr = [1,2,3,4,5,6,-1,-2,-3,-4,-5,-6];
+        //去掉数组中的负数，然后对每一项平方，然后再对每一项翻倍，然后求和
+        var arr = [1, 2, 3, 4, 5, 6, -1, -2, -3, -4, -5, -6];
+        // var sum = 0;
+        // var newArr = arr.filter(function (item) {
+        //     return item > 0;
+        // });
+        // newArr.forEach(function(item) {
+        //     item *= item;
+        //     item *= 2;
+        //     sum += item;
+        // });
+        // console.log(sum);
+        var result = arr.filter(function (item) {
+            return item > 0;
+        }).map(function(item){
+            return item * item;
+        }).map(function(item){
+            return item *2;
+        }).reduce(function(s,item){
+            return s + item;
+        })
+        console.log(result);
+    </script>
+</body>
+
+</html>

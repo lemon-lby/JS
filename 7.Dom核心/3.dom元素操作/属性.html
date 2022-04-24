@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 150px;
+            height: 150px;
+            border: 1px solid red;
+            object-fit: contain;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <div value="dsda"></div>
+    <button id="btnGetText">点击</button>
+    <button id="btnSetText">清空内容</button>
+    <img src="1.jpg" alt="">
+    <select>
+        <option value="chengdu">成都</option>
+        <option value="beijing">北京</option>
+        <option value="shanghai">上海</option>
+    </select>
+    <script>
+        document.getElementById("btnGetText").onclick = function () {
+            var input = document.querySelector("input[type=text]");
+            console.log(input.value);
+        }
+        document.getElementById("btnSetText").onclick = function () {
+            var input = document.querySelector("input[type=text]");
+            input.value = "";
+        }
+
+        //点击切换图片
+        var i = 1; //第i张图片
+        var img = document.querySelector("img");
+        img.onclick = function () {
+            i++;
+            if (i === 3) {
+                i = 1;
+            }
+            img.src = i + ".jpg";
+        }
+    </script>
+</body>
+
+</html>

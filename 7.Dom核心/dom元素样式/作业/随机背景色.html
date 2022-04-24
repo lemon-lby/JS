@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <script>
+        function randomRgbColor() { //随机生成RGB颜色
+            var r = Math.floor(Math.random() * 256); //随机生成256以内r值
+            var g = Math.floor(Math.random() * 256); //随机生成256以内g值
+            var b = Math.floor(Math.random() * 256); //随机生成256以内b值
+            return `rgb(${r},${g},${b})`; //返回rgb(r,g,b)格式颜色
+        }
+        var div = document.querySelector("div");
+        div.onclick = function () {
+            this.style.backgroundColor = randomRgbColor();
+        }
+    </script>
+</body>
+
+</html>

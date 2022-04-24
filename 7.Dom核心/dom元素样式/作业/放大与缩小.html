@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        字
+    </div>
+    <button id="big">放大</button>
+    <button id="small">缩小</button>
+
+
+
+    <script>
+        var div = document.querySelector("div");
+        var big = document.getElementById("big");
+        var small = document.getElementById("small");
+        var num  = 16;
+        big.onclick = function(){
+            num++;
+            div.style.fontSize = `${num}px`;
+        }
+        small.onclick = function(){
+            num--;
+            div.style.fontSize = `${num}px`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /-?\d+(\.0+)?/g;
+        var s = "asdf45faf21f4.1";
+        var n = 0;
+        while(result = reg.exec(s)){
+            n++;
+            console.log(`匹配结果${result[0]} 出现位置${result.index}`);
+        }
+        console.log(`出现了${n}次`);
+    </script>
+</body>
+</html>

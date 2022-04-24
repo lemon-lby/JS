@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container {
+            width: 640px;
+            height: 640px;
+            border: 1px solid black;
+            position: relative;
+            box-sizing: border-box;
+        } */
+
+        /* .container .tank {
+            position: absolute;
+            left: 0;
+            top: 0;
+        } */
+        img{
+            position: fixed;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="./img/d.png" alt="" class="tank">
+    </div>
+    <!-- <script>
+        var div = document.querySelector("div");
+        var tank = document.querySelector("img");
+        var style = getComputedStyle(tank);
+        var config = {
+            left: 0,
+            top: 0,
+            src:""
+        }
+
+        function setPosition() {
+            tank.style.top = config.top + "px";
+            tank.style.left = config.left + "px";
+            tank.src = config.src;
+        }
+
+        function area() {
+            if (config.top < 0) {
+                config.top = 0;
+            }
+            if (config.top > 560) {
+                config.top = 560;
+            }
+            if (config.left < 0) {
+                config.left = 0;
+            }
+            if (config.left > 560) {
+                config.left = 560;
+            }
+        }
+        window.onkeydown = function (e) {
+
+            if (e.key === "ArrowUp") {
+                config.top -= 80;
+                area();
+                config.src = "./img/w.png";
+                setPosition();
+            } else if (e.key === "ArrowDown") {
+                config.top += 80;
+                area();
+                config.src = "./img/s.png";
+                setPosition();
+            } else if (e.key === "ArrowLeft") {
+                config.left -= 80;
+                area();
+                config.src = "./img/a.png";
+                setPosition();
+            } else if (e.key === "ArrowRight") {
+                config.left += 80;
+                area();
+                config.src = "./img/d.png";
+                setPosition();
+            }
+        }
+    </script> -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

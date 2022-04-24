@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.baidu.com">
+        <div style="width: 100px; height: 100px; background-color: red;"></div>
+    </form>
+
+    <button id="btn1">1</button>
+    <button id="btn2">2</button>
+    <button id="btn3">鼠标移入按钮1</button>
+    <button id="btn4">鼠标移出按钮1</button>
+    <script>
+        var div = document.querySelector("div");
+        div.onclick = function () {
+            var form = document.querySelector("form");
+            form.submit();
+
+        }
+
+        btn1.onclick = function () {
+            console.log("1被点击");
+        }
+        btn2.onclick = function () {
+            console.log("2被点击");
+            btn1.click();
+        }
+        btn1.onmouseenter = function () {
+            this.style.background = "blue";
+            this.style.color = "#fff";
+        }
+        btn1.onmouseleave = function () {
+            this.style.background = "initial";
+            this.style.color = "initial";
+        }
+        btn3.onclick = function () {
+            var event = new MouseEvent("mouseenter", {
+                bubbles: false
+            });
+            btn1.dispatchEvent(event);
+        }
+        btn4.onclick = function () {
+            var event = new MouseEvent("mouseleave", {
+                bubbles: false
+            });
+            btn1.dispatchEvent(event);
+        }
+    </script>
+</body>
+
+
+</html>

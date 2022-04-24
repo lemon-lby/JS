@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //135-1000   是否有整除26的数字
+        // var a = false;
+        // for (var i = 135; i <= 1000; i++) {
+        //     if (i % 26 === 0) {
+        //         a = true;
+        //         console.log("存在" + i);
+        //         break;
+        //     }
+        // }
+
+
+        // //135-185 整除26的数字
+        // for (var i = 135; i <= 185; i++) {
+        //     if (i % 26 === 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // //135-185  第一个能整除26
+        // for(i=135;i<=185;i++){
+        //     if(i%26===0){
+        //         console.log(i);
+        //         break;
+        //     }
+        // }
+
+
+
+
+
+        // 判断一个数是不是质数
+        //大于1  只能被1和自身整除
+        var num = prompt();
+        var time = 0;
+        for(var i = 2;i<num;i++){
+            if(num%i===0){
+                time++;
+            }
+        }
+        if(time>2){
+            console.log("不是素数");
+        }
+        else{
+            console.log("是素数");
+        }
+    </script>
+</body>
+
+</html>

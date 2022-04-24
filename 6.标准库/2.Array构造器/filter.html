@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [50, 60, 70, 80];
+        //得到所有及格的分数
+        var newArr = arr.filter(function (item) {
+            return item >= 60;
+        });
+        console.log(newArr);
+
+        //第一个及格的
+        var result = arr.find(function (item) {
+            return item >= 60;
+        });
+        console.log(result);
+
+        //第一个及格的下标
+        var index = arr.findIndex(function (item) {
+            return item >= 60;
+        });
+        console.log(index);
+    </script>
+</body>
+
+</html>

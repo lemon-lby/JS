@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="javascript:;">百度</a>
+    <form action="https://www.taobao.com">
+        <p>
+            <input type="text">
+        </p>
+        <p>
+            <button type="button">
+                提交
+            </button>
+        </p>
+    </form>
+
+    <script>
+        var a = document.querySelector("a");
+        var btn = document.querySelector("button");
+        var form = document.querySelector("form");
+        a.addEventListener("click", function (e) {
+            // e.preventDefault(); //阻止浏览器的默认行为
+            console.log("点击点击点击点击点击点击");
+        })
+        btn.onclick = function(e){
+            e.stopPropagation();
+        }
+        form.onclick = function(){
+            console.log("form");
+        }
+    </script>
+</body>
+
+</html>

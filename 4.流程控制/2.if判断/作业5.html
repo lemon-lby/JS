@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var me;
+        var choose = prompt("剪刀 石头 布");
+        var you = Math.random();
+        // console.log(you);
+        if(choose === "剪刀"){
+            if(you<=0.33){
+                console.log("平局");
+            }
+            else if(you>0.33&&you<0.66){
+                console.log("电脑胜");
+            }
+            else{
+                console.log("你赢了");
+            }
+        }
+        else if(choose == "石头"){
+            if(you<=0.33){
+                console.log("你赢了");
+            }
+            else if(you>0.33&&you<0.66){
+                console.log("平局");
+            }
+            else{
+                console.log("电脑胜");
+            }
+        }
+        else if(choose == "布"){
+            if(you<=0.33){
+                console.log("电脑胜");
+            }
+            else if(you>0.33&&you<0.66){
+                console.log("你赢了");
+            }
+            else{
+                console.log("平局");
+            }
+        }
+        else{
+            console.log("输入有误");
+        }
+    </script>
+</body>
+</html>

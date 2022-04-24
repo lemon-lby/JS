@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .left {
+            float: left;
+        }
+
+        .left select {
+            width: 300px;
+            height: 600px;
+        }
+
+        .left select option {
+            height: 60px;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .mid {
+            margin-top: 60px;
+            margin-left: 20px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        .mid button {
+            display: block;
+            margin-top: 30px;
+        }
+
+        .right {
+            float: left;
+        }
+
+        .right select {
+            width: 300px;
+            height: 600px;
+        }
+
+        .right select option {
+            height: 60px;
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container clearfix">
+        <div class="left">
+            <h2>可选</h2>
+            <select id="sel1" multiple>
+                <option value="1">a</option>
+                <option value="2">b</option>
+                <option value="3">c</option>
+                <option value="4">d</option>
+                <option value="5">e</option>
+            </select>
+        </div>
+        <div class="mid">
+            <button id="toLeft">>></button>
+            <button id="toLeftAll">>>|</button>
+            <button id="toRight">
+                <<</button> <button id="toRightAll">|<<</button> </div> <div class="right">
+                        <h2>已选</h2>
+                        <select id="sel2" multiple>
+                            <option value="1">1</option>
+                        </select>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script>
+        var sel1 = document.getElementById("sel1");
+        var sel2 = document.getElementById("sel2");
+        var btnLeft = document.getElementById("toRight");
+        var btnLeftAll = document.getElementById("toRightAll");
+        var btnRight = document.getElementById("toLeft");
+        var btnRightAll = document.getElementById("toLeftAll");
+
+        //得到某个select元素内部被选中的option数组
+        function getSelectedOptions(sel) {
+            //优化
+            return Array.from(sel.children).filter(function (item) {
+                return item.selected;
+            })
+            // var opts = [];
+            // for (var i = 0; i < sel.children.length; i++) {
+            //     if(sel.children[i].selected){
+            //         opts.push(sel.children[i]);
+            //     }
+            // }
+            // return opts;
+        }
+        //将opts数组中的东西添加到指定的select中
+        // opts:要添加的数组
+        //sel:要添加到的select元素
+        function appendToSelect(opts, sel) {
+            opts = Array.from(opts);
+            var frag = document.createDocumentFragment();
+            for (var i = 0; i < opts.length; i++) {
+                opts[i].selected = false;
+                frag.appendChild(opts[i]);
+            }
+            sel.appendChild(frag);
+        }
+
+        btnLeft.onclick = function () {
+            //获取右边选中的
+            var opts = getSelectedOptions(sel2);
+            // 循环将该数组添加到左侧
+            appendToSelect(opts, sel1);
+
+        }
+        btnLeftAll.onclick = function () {
+            appendToSelect(sel2.children, sel1);
+        }
+        btnRight.onclick = function () {
+            var opts = getSelectedOptions(sel1);
+            appendToSelect(opts, sel2);
+        }
+        btnRightAll.onclick = function () {
+            appendToSelect(sel1.children, sel2);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+        <input type="text">
+        <button id="add">添加</button>
+    </p>
+    <ul>
+        <li>
+            <span>列表1</span>
+            <button class="del">删除</button>
+        </li>
+        <li>
+            <span>列表2</span>
+            <button class="del">删除</button>
+        </li>
+        <li>
+            <span>列表3</span>
+            <button class="del">删除</button>
+        </li>
+    </ul>
+
+
+
+    <script>
+        var btnadd = document.getElementById("add");
+        var input = document.querySelector("input");
+        var ul = document.querySelector("ul");
+        var dels = Array.from(document.getElementsByClassName("del"));
+
+        btnadd.addEventListener("click", function () {
+            var li = document.createElement("li");
+            var btn = document.createElement("button");
+            li.innerText = input.value;
+            btn.innerText = "删除";
+            btn.classList.add("del");
+            ul.appendChild(li);
+            li.appendChild(btn);
+            btn.onclick = function () {
+                btn.parentElement.remove();
+            }
+        });
+
+
+        dels.forEach(function test(e) {
+            e.onclick = function () {
+                e.parentElement.remove();
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <p><span>Lorem, ipsum.<button>删除</button></span></p>
+        <p><span>Quis, laborum.<button>删除</button></span></p>
+        <p><span>Enim, culpa.<button>删除</button></span></p>
+        <p><span>Temporibus, iure.<button>删除</button></span></p>
+        <p><span>Vero, deleniti!<button>删除</button></span></p>
+        <p><span>Corporis, corrupti.<button>删除</button></span></p>
+        <p><span>Illo, exercitationem.<button>删除</button></span></p>
+        <p><span>Voluptatum, fugiat!<button>删除</button></span></p>
+        <p><span>Error, est.<button>删除</button></span></p>
+        <p><span>Fuga, adipisci.<button>删除</button></span></p>
+    </div>
+
+
+    <script>
+        var div = document.querySelector("div");
+        div.onclick = function (e) {
+            if(e.target.tagName==="BUTTON"){
+                e.target.parentElement.remove();
+            }
+        }
+    </script>
+</body>
+
+</html>

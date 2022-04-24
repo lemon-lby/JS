@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: none;
+        }
+
+        ul {
+            padding-left: 0;
+        }
+
+        li {
+            display: block;
+            margin-bottom: 5px;
+            border: 1px solid black;
+            border-left: none;
+            border-right: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        //实现一个自定义的右键菜单
+        var body = document.querySelector("body");
+        var div = document.createElement("div");
+        var menu = [{
+            children: ["功能1", "功能2", "功能3", "功能4", "功能5", "功能6", "功能7", "功能8", "功能9"]
+        }]
+        initDiv();
+        body.appendChild(div);
+
+        function initDiv() {
+            div.style.height = "283px";
+            div.style.width = "270px";
+            div.style.border = "1px solid black"
+            div.style.backgroundColor = "white";
+            div.style.position = "fixed";
+        }
+
+        function setPosition(a, b) {
+            div.style.left = a;
+            div.style.top = b;
+        }
+        divMenu();
+
+        function divMenu() {
+            var ul = document.createElement("ul");
+            var li = document.createElement("li");
+            menu.forEach(function (item) {
+                item.children.forEach(function (child) {
+                    ul.innerHTML += `<li>${child}</li>`;
+                })
+            })
+            div.appendChild(ul);
+        }
+
+        window.oncontextmenu = function (e) {
+            e.preventDefault();
+            div.style.display = "block";
+            div.style.left = e.clientX + "px";
+            div.style.top = e.clientY + "px";
+        }
+        window.onmousedown = function (e) {
+            div.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

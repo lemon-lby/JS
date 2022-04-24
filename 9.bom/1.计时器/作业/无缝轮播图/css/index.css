@@ -1,0 +1,81 @@
+.banner {
+    width: 520px;
+    height: 280px;
+    background-color: red;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.banner:hover .item{
+    display: block;
+}
+
+.banner .imgs img {
+    width: 520px;
+    height: 280px;
+    display: block;
+
+}
+
+.banner .imgs a {
+    float: left;
+}
+
+.banner .dots {
+    position: absolute;
+    background: rgba(255, 255, 255, .3);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    bottom: 12px;
+    padding: 2px 4px;
+    border-radius: 8px;
+
+}
+
+.banner .dots span {
+    float: left;
+    width: 8px;
+    height: 8px;
+    margin: 2px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.banner .dots span.active {
+    background: gold;
+}
+
+.banner .arrow{
+    display: none;
+}
+.banner:hover .arrow{
+    display: block;
+}
+.banner .arrow .item {
+    position: absolute;
+    top: 120px;
+    color: white;
+    background: rgba(255, 255, 255, .5);
+    width: 20px;
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.banner .arrow .item:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.banner .arrow .right {
+    right: 0;
+    border-radius: 15px 0 0 15px;
+    padding-left: 5px;
+    box-sizing: border-box;
+}
+
+.banner .arrow .left {
+    left: 0;
+    border-radius: 0 15px 15px 0;
+}

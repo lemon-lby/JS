@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var str = prompt();
+
+        // function test(ch) {
+        //     return ch.split(" ").map(function (item) {
+        //         return item[0].toUpperCase() + item.substring(1);
+        //     }).join("");
+        // };
+        // console.log(test(str));
+
+
+
+        var a = "hello world";
+        var empties = "   \t\r\n";
+        var result = "";
+        for (var i = 0; i < a.length; i++) {
+            if (empties.includes(a[i - 1]) || i === 0) {
+                result += a[i].toLocaleUpperCase();
+            }
+            else if (!empties.includes(a[i])) {
+                result += a[i];
+            }
+        }
+        console.log(result);
+    </script>
+</body>
+
+</html>

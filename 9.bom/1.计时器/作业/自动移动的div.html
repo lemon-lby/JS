@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        var style = getComputedStyle(div);
+        var x = 0,
+            y = 0, //初始坐标
+            xDis = 10,
+            yDis = 10, //每次移动的距离
+            duration = 16, //移动的间隔时间\
+            width = 100,
+            height = 100;
+        setInterval(function () {
+            x += xDis;
+            y += yDis;
+            //判断边界
+            if (y >= document.documentElement.clientHeight - height) {
+                yDis = -yDis;
+            }
+            if (y <= 0) {
+                yDis = -yDis;
+            }
+            if (x >= document.documentElement.clientWidth - width) {
+                xDis = -xDis;
+            }
+            if (x <= 0) {
+                xDis = -xDis;
+            }
+            div.style.left = x + "px";
+            div.style.top = y + "px";
+        }, duration);
+    </script>
+</body>
+
+</html>

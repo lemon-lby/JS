@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="www.baidu.com">
+        <p>
+            <input type="text" placeholder="请输入账号">
+        </p>
+        <button>按钮1</button>
+        <button>按钮2</button>
+    </form>
+    <select name="" id="sel">
+        <option value="1">Lorem, ipsum.</option>
+        <option value="2">Ab, aut!</option>
+        <option value="3">Iusto, quos.</option>
+        <option value="4">Consequuntur, molestias!</option>
+        <option value="5">Ducimus, est.</option>
+        <option value="6">Ipsam, consectetur?</option>
+        <option value="7">Amet, libero.</option>
+        <option value="8">Quasi, aut?</option>
+        <option value="9">Alias, corrupti.</option>
+        <option value="10">Ut, tempora.</option>
+    </select>
+    <input type="text" name="" id="txt1">
+    <input type="text" id="txt2">
+    <script>
+        var form = document.querySelector("form");
+        var inp = document.querySelector("input");
+        form.onsubmit = function (e) {
+            if (!inp.value.trim()) {
+                console.log("请输入");
+                e.preventDefault();
+            }
+
+        }
+        sel.onchange = function () {
+
+            console.log(sel.value, sel.selectedIndex, sel.options[sel.selectedIndex].innerHTML);
+        }
+        // txt1.onchange = txt2.onchange = function (e) {
+        //     console.log(this.value,e.bubbles);
+        // }
+        txt1.oninput = txt2.oninput = function (e) {
+            if (!this.value.trim()) {
+                console.log("请输入内容");
+                return;
+            }
+            console.log(this.value, e.bubbles);
+        }
+    </script>
+</body>
+
+</html>

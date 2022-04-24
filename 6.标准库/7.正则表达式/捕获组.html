@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var s = "2015-5-1,1999-1-0,2000-2-25";
+        var reg = /(?<year>\d{4})-(?<month>\d{1})-(?<day>\d{1})/g;
+        // var reg = /(?:\d{4})-(?:\d{1})-(?:\d{1})/g; 非捕获组 ?:
+        while (result = reg.exec(s)) {
+            console.log(result[0], result.groups.year, result.groups.month, result.groups.day);
+        }
+    </script>
+</body>
+
+</html>

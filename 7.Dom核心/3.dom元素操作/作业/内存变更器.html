@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <p>库存的最小值为0</p>
+    <div>
+        库存:
+        <button id="d1">-1000</button>
+        <button>-100</button>
+        <button>-10</button>
+        <button>-1</button>
+        <span>0</span>
+        <button id="p1">+1</button>
+        <button>+10</button>
+        <button>+100</button>
+        <button>+1000</button>
+    </div>
+    <script>
+        // var div = document.querySelector("div");
+        // var btnD1000 = document.getElementById("d1");
+        // btnD1000.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = span.innerText - 1000;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnD100 = btnD1000.nextElementSibling;
+        // btnD100.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = span.innerText - 100;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnD10 = btnD100.nextElementSibling;
+        // btnD10.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = span.innerText - 10;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnD1 = btnD10.nextElementSibling
+        // btnD1.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = span.innerText - 1;
+        //     div.replaceChild(newSpan, span);
+        // }
+
+
+        // var btnP1000 = document.getElementById("p1");
+        // btnP1000.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = +span.innerText + 1;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnP100 = btnP1000.nextElementSibling;
+        // btnP100.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = +span.innerText + 10;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnP10 = btnP100.nextElementSibling;
+        // btnP10.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = +span.innerText + 100;
+        //     div.replaceChild(newSpan, span);
+        // }
+        // var btnP1 = btnP10.nextElementSibling
+        // btnP1.onclick = function () {
+        //     var newSpan = document.createElement("span");
+        //     var span = document.querySelector("span");
+        //     newSpan.innerText = +span.innerText + 1000;
+        //     div.replaceChild(newSpan, span);
+        // }
+
+    </script> -->
+
+    <p>库存的最小值为0</p>
+    <div>
+        库存:
+        <button data-p="-1000">-1000</button>
+        <button data-p="-100">-100</button>
+        <button data-p="-10">-10</button>
+        <button data-p="-1">-1</button>
+        <span>1</span>
+        <button data-p="+1">+1</button>
+        <button data-p="+10">+10</button>
+        <button data-p="+100">+100</button>
+        <button data-p="+1000">+1000</button>
+    </div>
+    <script>
+        //教学
+        var btns = document.querySelectorAll("button");
+        var span = document.querySelector("span");
+        for (var i = 0; i < btns.length; i++) {
+            var b = btns[i];
+            b.onclick = function () {
+                var num = parseInt(span.innerText);
+                //加某个数
+                var plus = parseInt(this.dataset.p);
+                var result = num + plus;
+                console.log(result);
+                if (result < 0) {
+                    result = 0;
+                }
+                span.innerText = result;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /[\u4e00-\u9fef]/g;
+        var s = "asdas按时发放你fasf";
+        var n = 0;
+        while(result = reg.exec(s)){
+            n++;
+        };
+        console.log(`出现了${n}个中文`);
+
+    </script>
+</body>
+</html>

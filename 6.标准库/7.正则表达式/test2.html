@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var reg = /\d+/g;
+        var s ="1234fassa123asd";
+        //得到所有的匹配结果和位置
+        var result;
+        while(result = reg.exec(s)){
+            console.log(`匹配结果${result[0]} 出现位置${result.index}`);
+        }
+    </script>
+</body>
+</html>
